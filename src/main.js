@@ -1,11 +1,14 @@
 const Koa = require('koa');
 
+const {APP_PORT} = require('./config/config.default')
+
+
 const app = new Koa()
 //中间件
 app.use((ctx,next)=>{
-    ctx.body='hello word'
+    ctx.body='hello wwword'
 })
 
-app.listen(3000,()=>{
-    console.log('helloword');
+app.listen(APP_PORT,()=>{
+    console.log(APP_PORT);
 })
