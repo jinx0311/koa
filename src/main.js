@@ -1,14 +1,9 @@
-const Koa = require('koa');
 
+const Router = require('koa-router')
 const {APP_PORT} = require('./config/config.default')
 
+const app = require('./app')
 
-const app = new Koa()
-//中间件
-app.use((ctx,next)=>{
-    ctx.body='hello wwword'
-})
+app.listen(3000,()=>{ 
 
-app.listen(APP_PORT,()=>{
-    console.log(APP_PORT);
 })
