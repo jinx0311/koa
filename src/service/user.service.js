@@ -6,4 +6,4 @@ class UserService{
     }
 }
 
-module.export = new UserService()
+module.exports = new UserService()
