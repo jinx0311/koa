@@ -9,5 +9,5 @@ class UserController {
         const res = await createUser(user_name,password)
         ctx.body=res
     }
-} 
+}
 module.exports = new UserController()

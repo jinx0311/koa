@@ -15,7 +15,9 @@
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
     "koa-router": "^10.1.1",
-    "koa2-cors": "^2.0.6"
+    "koa2-cors": "^2.0.6",
+    "mysql2": "^2.3.3-rc.0",
+    "sequelize": "^6.9.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.14"
