@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "dotenv": "^10.0.0",
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
@@ -18,7 +20,10 @@
     "koa2-cors": "^2.0.6",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3-rc.0",
-    "sequelize": "^6.9.0"
+    "sequelize": "^6.9.0",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1",
+    "xss": "^1.0.10"
   },
   "devDependencies": {
     "nodemon": "^2.0.14"

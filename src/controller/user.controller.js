@@ -1,23 +1,24 @@
-const sqldb = require('../mysql/index')
+const  xss  = require('xss');
+const sqldb = require('../mysql/index') 
 class UserController {
-    async register(ctx,next){
-        console.log(ctx.request.body)
-        let sql = `insert into test (user_name, password) values ('${ctx.request.body.user_name}', '${ctx.request.body.password}')`;
+    async register(ctx,next){ 
+        let ctime=new Date().getTime()
+        let sql = `insert into user (user_name, password,ctime) values ('${xss(ctx.request.body.user_name)}', '${xss(ctx.request.body.password)}','${xss(ctime)}')`;
         let res = await sqldb(sql)
        ctx.body={
-           data:ctx.request.body,
+           data:xss(ctx.request.body),
            code:0,
            message:'注册成功'
        }
     }
     async login(ctx,next){   
-        let sql = 'SELECT * FROM test'
+        let sql = 'SELECT * FROM user'
         let res=await sqldb(sql)
         let code;
         let message;
         res.forEach(item=>{
-            if(item.user_name==ctx.request.body.user_name){
-                if(item.password=ctx.request.body.password){
+            if(item.user_name==xss(ctx.request.body.user_name)){
+                if(item.password=xss(ctx.request.body.password)){
                     code=0
                     message='登陆成功'
                 }else{

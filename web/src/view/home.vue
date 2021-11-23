@@ -1,16 +1,14 @@
 <template>
   <div class="home">
-      <div @click="onClick">
+      <div>
         <ul>
-          <li v-for="(item,index) in list" :key="item" :index="index">
-            {{item}}
-          </li>
+         
         </ul>
       </div>
   </div>
 </template>
 <script>
-import chil from '@/components/HelloWorld.vue'
+import {getArticleList} from '@/request/api'
 export default { 
   data() {
     return {
@@ -18,12 +16,16 @@ export default {
     
     };
   },
-  methods:{
-    onClick(e){
-      console.log(e.target.getAttribute('index'));
-    }
+  mounted(){
+    this.getList()
   },
-  components:{chil}
+  methods:{
+    getList(){
+      getArticleList().then(res=>{
+        
+      })
+    }
+  }, 
 };
 </script>
 <style scoped>
